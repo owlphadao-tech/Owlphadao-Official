@@ -9,7 +9,7 @@ const Navbar = () => {
     { name: 'Ecosystem', path: '/ecosystem' },
     { name: 'About Us', path: '/about' },
     { name: 'Community & Events', path: '/community' },
-    { name: 'Contact', path: '/contact' }, 
+    
   ];
 
   return (
@@ -17,9 +17,9 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         
         {/* Brand Logo */}
-        <Link to="/" className="text-2xl flex gap-2 font-bold tracking-tighter text-[var(--color-dark)] cursor-pointer select-none">
-          <img src="https://owlphadao.com/_next/image?url=%2Fowlpha-logo.png&w=384&q=75" width={10} height={10}   alt="" />
-          Owlpha<span className="text-[var(--color-primary)]">DAO</span>
+        <Link to="/" className="text-2xl flex font-bold tracking-tighter text-[var(--color-dark)] cursor-pointer select-none">
+          <img src="/owlpha-logo.png" className=' -mt-2 ' width={60} height={60}   alt="" />
+          
         </Link>
 
         {/* Desktop Navigation */}
@@ -40,9 +40,11 @@ const Navbar = () => {
           })}
           
           {/* Call to Action */}
+          <Link to="/contact">
           <button className="bg-[var(--color-dark)] text-[var(--color-light)] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-[var(--color-primary)] hover:shadow-lg transition-all duration-300">
-            Connect Web3
+            Connect 
           </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Hamburger */}
