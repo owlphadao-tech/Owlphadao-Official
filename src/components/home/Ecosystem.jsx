@@ -63,7 +63,7 @@ const Ecosystem = () => {
   ];
 
   return (
-    <div className="relative z-10 w-full bg-[var(--color-light)] border-t border-[var(--color-secondary)]/20 pb-24 overflow-hidden">
+    <div id='ecosystem' className="relative z-10 w-full bg-[var(--color-light)] border-t border-[var(--color-secondary)]/20 pb-24 overflow-hidden">
       
       {/* Animated Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

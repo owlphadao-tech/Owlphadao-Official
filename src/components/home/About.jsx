@@ -51,7 +51,7 @@ const About = () => {
   ];
 
   return (
-    <div className="relative z-10 w-full min-h-screen flex flex-col items-center bg-black text-white overflow-hidden">
+    <div  id='about' className="relative z-10 w-full min-h-screen flex flex-col items-center bg-black text-white overflow-hidden">
       
       {/* 1. Hero Section - Set alignment to start/left */}
       <section className="relative w-full max-w-7xl mx-auto min-h-[60vh] flex flex-col justify-center items-start px-6 py-32 text-left">
@@ -65,7 +65,7 @@ const About = () => {
           className="relative z-10 max-w-4xl"
         >
           <motion.div variants={fadeUp} className="mb-6 inline-block px-4 py-1.5 rounded-full ">
-            <span className="text-sm font-semibold tracking-wide text-[var(--color-primary)] uppercase">
+            <span className="text-sm font-bold tracking-wide text-[var(--color-primary)] uppercase">
               About OwlphaDAO
             </span>
           </motion.div>

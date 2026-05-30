@@ -49,7 +49,7 @@ const Community = () => {
   ];
 
   return (
-    <div className="relative z-10 w-full bg-[var(--color-light)] pb-24 overflow-hidden">
+    <div id='community' className="relative z-10 w-full bg-[var(--color-light)] pb-24 overflow-hidden">
       
       {/* Animated Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -69,8 +69,8 @@ const Community = () => {
         {/* Header Section */}
         <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto text-center">
           <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
-            <motion.div variants={fadeUp} className="mb-4 inline-block px-4 py-1.5 rounded-full border border-[var(--color-primary)]/30 bg-[var(--color-primary)]/5">
-              <span className="text-sm font-semibold tracking-wide text-[var(--color-primary)] uppercase">
+            <motion.div variants={fadeUp} className="mb-4 inline-block px-4 py-1.5">
+              <span className="text-sm font-bold tracking-wide text-[var(--color-primary)] uppercase">
                 Join The Movement
               </span>
             </motion.div>

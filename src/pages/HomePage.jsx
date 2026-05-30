@@ -22,9 +22,9 @@ const Home = () => {
       <About/>
       <Ecosystem/>
       <EcosystemStats/>
-      <Community/>
       <Assets/>
       <Roadmap/>
+       <Community/>
       <Contact/>
       <Footer/>
     </div>

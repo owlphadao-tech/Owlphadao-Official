@@ -19,7 +19,7 @@ const staggerContainer = {
 
 const Contact = () => {
   return (
-    <div className="relative z-10 w-full bg-[var(--color-light)] pb-24 overflow-hidden">
+    <div id='contact' className="relative z-10 w-full bg-[var(--color-light)] pb-24 overflow-hidden">
       
       {/* Animated Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

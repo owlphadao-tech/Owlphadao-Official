@@ -18,7 +18,7 @@ const HeroVision = () => {
       <div className="relative z-10">
         
         {/* --- Hero Section --- */}
-        <div className="min-h-screen flex flex-col justify-center -mt-5 md:mt-1 px-6 py-20 max-w-7xl mx-auto">
+        <div className="min-h-screen justify-center text-center  mt-5  pt-11 max-w-6xl mx-auto">
       
           <motion.h1 
             initial={{ opacity: 0, y: 40 }}
@@ -26,17 +26,17 @@ const HeroVision = () => {
             transition={{ delay: 0.2 }}
             className="text-6xl md:text-8xl font-extrabold tracking-tighter leading-[1.05] mb-10"
           >
-            Learn with Purpose. <br />
-            <span className="text-[var(--color-primary)] italic">Earn with Protocol.</span>
+            Architect the Future. <br />
+            <span className="text-[var(--color-primary)] italic">Build Verifiable Utility.</span>
           </motion.h1>
 
           <motion.p 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-xl md:text-2xl text-[var(--color-light)]/70 max-w-2xl mb-12 font-light leading-relaxed"
+            className="text-xl text-[var(--color-light)]/70 max-w-2xl md:mb-9 mb-1 m-auto font-light justify-center item-center text-center leading-relaxed"
           >
-            OwlphaDAO rewires global Edutech by pairing verifiable learning metrics with asset tokenomics and elite NFT utility keys. Elevate your code, access premium intelligence vaults, and fast-track your route to full-stack deployment.
+            OwlphaDAO is the premier decentralized engine transforming raw code into verifiable project utility. Through strategic token economies and gated network access, we provide modern builders with the intelligence infrastructure and verified pipelines needed to scale across global networks.
           </motion.p>
         </div>
 
