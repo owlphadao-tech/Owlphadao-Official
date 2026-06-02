@@ -1,31 +1,34 @@
-import React from 'react';
-import Hero from '../components/home/hero';
-import OwlphaStory from '../components/home/story';
-import EcosystemStats from '../components/home/EcosystemStats';
-import Assets from '../components/home/Asset';
+
 import Roadmap from '../components/home/RoadMap';
 
-import About from '../components/home/About';
-import Ecosystem from '../components/home/Ecosystem';
 
-import Contact from '../components/home/Contact';
+
 import Footer from '../components/Footer';
-import Community from '../components/home/Community';
+
+import HeroSection from '../components/home/hero';
+import TrustBanner from '../components/home/TrustBanner';
+import SolutionSection from '../components/home/Solutionsection';
+import EnginesSection from '../components/home/EnginesSection';
+import ImpactMetrics from '../components/home/ImpactMetrics';
+import CallToAction from '../components/home/CallToAction';
+import AboutPage from '../components/home/About';
+import NftCollectionSection from '../components/home/NftCollectionSection';
 
 
 const Home = () => {
   return (
     <div className="bg-[var(--color-dark)] min-h-screen">
-      <Hero/>
+      <HeroSection/>
    
-      <OwlphaStory/>
-      <About/>
-      <Ecosystem/>
-      <EcosystemStats/>
-      <Assets/>
+     <TrustBanner/>
+     <AboutPage/>
+     <NftCollectionSection/>
+     <SolutionSection/>
+     <EnginesSection/>
+      <ImpactMetrics/>
       <Roadmap/>
-       <Community/>
-      <Contact/>
+      <CallToAction/>
+      
       <Footer/>
     </div>
   );

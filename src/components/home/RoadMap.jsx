@@ -1,69 +1,28 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
-const Roadmap = () => {
-  const phases = [
-    { 
-      title: "Knowledge Infrastructure", 
-      desc: "Deploying decentralized frameworks that empower creators, organizations, and individuals to build structured learning environments, share expertise, and acquire high-demand skills." 
-    },
-    { 
-      title: "Decision Architecture", 
-      desc: "Building intuitive platform tools and governance modules to assist communities and enterprises in making data-driven, strategic decisions efficiently." 
-    },
-    { 
-      title: "Talent Acceleration", 
-      desc: "Launching optimized placement pipelines and matching systems designed to connect skilled individuals with global organizations, drastically reducing the time it takes to land a job." 
-    },
-    { 
-      title: "Unified Ecosystem", 
-      desc: "Integrating education, collaborative decision-making, and employment infrastructure into a single, seamless engine driving the future of work." 
-    }
-  ];
-
+export default function Roadmap() {
   return (
-    <section className="relative py-32 border-t border-[var(--color-secondary)]/20 overflow-hidden">
-      {/* Background Layer with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=2000&auto=format&fit=crop" 
-          alt="Abstract Path" 
-          className="w-full h-full object-cover"
-        />
-        {/* Dark overlay to maintain high contrast for text */}
-        <div className="absolute inset-0 bg-[var(--color-dark)]/90 backdrop-blur-[2px]" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="text-5xl font-extrabold text-[var(--color-light)] mb-20 text-center"
-        >
-          The Path Forward.
-        </motion.h2>
-        
-        <div className="grid md:grid-cols-4 gap-8">
-          {phases.map((phase, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="relative border-t-2 border-[var(--color-secondary)]/30 pt-8 group hover:border-[var(--color-primary)] transition-colors duration-300"
-            >
-              <div className="absolute -top-3 left-0 w-6 h-6 rounded-full bg-[var(--color-secondary)] group-hover:bg-[var(--color-primary)] group-hover:scale-125 transition-all duration-300" />
-              <span className="text-xs font-bold uppercase tracking-wider text-[var(--color-primary)] block mb-1">Phase 0{i + 1}</span>
-              <h3 className="text-xl font-bold text-[var(--color-light)] mb-4">{phase.title}</h3>
-              <p className="text-[var(--color-light)]/60 font-light text-sm leading-relaxed">{phase.desc}</p>
-            </motion.div>
-          ))}
-        </div>
+    <section className="py-24 px-6 max-w-5xl mx-auto">
+      <h2 className="text-4xl font-bold text-center mb-16">The Next Evolution</h2>
+      <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-[#E48C2A] before:to-[#4D4D4D]">
+        {[
+          { phase: 'Phase 1', title: 'Foundation', items: ['Academy Launch', 'Educator Network'] },
+          { phase: 'Phase 2', title: 'Activation', items: ['CAP Expansion', 'Blueprint Automation'] },
+          { phase: 'Phase 3', title: 'Economic Network', items: ['TSU Marketplace', 'Regional Chapters'] },
+          { phase: 'Phase 4', title: 'Global Scale', items: ['International Partnerships', 'Ecosystem Expansion'] }
+        ].map((step, i) => (
+          <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-[#000] bg-[#E48C2A] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow ml-0 md:ml-auto md:mr-auto z-10"></div>
+            <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-[#111] p-6 rounded-2xl border border-[#4D4D4D] hover:border-[#E48C2A] transition-colors">
+              <span className="text-[#E48C2A] font-bold text-sm mb-1 block">{step.phase}</span>
+              <h4 className="text-xl font-bold text-white mb-4">{step.title}</h4>
+              <ul className="text-gray-400 text-sm space-y-2">
+                {step.items.map((item, idx) => <li key={idx}>• {item}</li>)}
+              </ul>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
-
-export default Roadmap;
+}

@@ -1,195 +1,327 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { 
+  Eye, Shield, Users, ArrowRight, BookOpen, 
+  Zap, Network, Target, Feather, Globe, 
+  ChevronRight, Sparkles
+} from 'lucide-react';
 
-// Animation Variants
-const fadeUp = {
+// --- Animation Variants ---
+const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } }
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
-    }
+    transition: { staggerChildren: 0.2, delayChildren: 0.1 }
   }
 };
 
-const About = () => {
-  const coreValues = [
-    {
-      title: 'Real Utility',
-      description: 'Amplifying builders and projects by focusing on practical, real-world applications and utility across various blockchains.',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" />
-        </svg>
-      )
-    },
-    {
-      title: 'Community & Events',
-      description: 'Connecting diverse communities and hosting high-impact events to foster a strong, collaborative Web3 environment.',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      )
-    },
-    {
-      title: 'Education & Innovation',
-      description: 'Driving mass adoption by providing the educational resources and innovative frameworks necessary for Web3 success.',
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      )
-    }
-  ];
+const floatAnimation = {
+  initial: { y: 0 },
+  animate: {
+    y: [-8, 8, -8],
+    transition: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+  }
+};
 
+const pulseGlow = {
+  initial: { scale: 1, opacity: 0.1 },
+  animate: {
+    scale: [1, 1.1, 1],
+    opacity: [0.1, 0.15, 0.1],
+    transition: { duration: 8, repeat: Infinity, ease: "easeInOut" }
+  }
+};
+
+export default function AboutPage() {
   return (
-    <div  id='about' className="relative z-10 w-full min-h-screen flex flex-col items-center bg-black text-white overflow-hidden">
+    <div className="bg-[#000000] text-[#FFFFFF] font-sans min-h-screen overflow-hidden selection:bg-[#E48C2A] selection:text-[#000000] relative">
       
-      {/* 1. Hero Section - Set alignment to start/left */}
-      <section className="relative w-full max-w-7xl mx-auto min-h-[60vh] flex flex-col justify-center items-start px-6 py-32 text-left">
-        {/* Soft Ambient Glows for Dark Mode */}
-        <div className="absolute top-1/4 left-1/5 -translate-x-1/2 w-[40rem] h-[40rem] bg-[var(--ordinary-red)]/40 rounded-full blur-[150px] pointer-events-none" />
+      {/* Background Grid Pattern */}
+      <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] opacity-20" />
+
+      {/* 1. HERO SECTION */}
+      <section className="relative pt-40 pb-15 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col items-center text-center z-10">
+        {/* Animated Background Orb */}
+        <motion.div 
+          variants={pulseGlow}
+          initial="initial"
+          animate="animate"
+          className="absolute top-[-10%] left-[50%] -translate-x-1/2 w-[800px] h-[500px] bg-[#E48C2A] blur-[150px] rounded-full pointer-events-none"
+        />
         
-        <motion.div 
-          initial="hidden"
-          animate="visible"
-          variants={staggerContainer}
-          className="relative z-10 max-w-4xl"
+   
+
+        <motion.h1 
+          initial="hidden" animate="visible" variants={fadeInUp}
+          className="text-5xl  font-['Space_mono',monospace] font-bold font-black tracking-tighter mb-8 max-w-5xl leading-[1.1]"
         >
-          <motion.div variants={fadeUp} className="mb-6 inline-block px-4 py-1.5 rounded-full ">
-            <span className="text-sm font-bold tracking-wide text-[var(--color-primary)] uppercase">
-              About OwlphaDAO
-            </span>
-          </motion.div>
-          
-          <motion.h1 variants={fadeUp} className="text-5xl md:text-7xl font-extrabold tracking-tighter mb-8 leading-[1.1] text-white">
-            Amplifying <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-blue-500">Builders</span> & Projects.
-          </motion.h1>
-          
-          <motion.p variants={fadeUp} className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl font-light">
-            OwlphaDAO is a Web3 ecosystem amplifying builders and projects with real utility across blockchains. We connect communities, host events, and drive adoption through education, collaboration, and innovation.
-          </motion.p>
-        </motion.div>
+          Redefining Economic <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E48C2A] to-[#f74f4f]">
+            Sovereignty
+          </span>
+        </motion.h1>
+        
+        <motion.p 
+          initial="hidden" animate="visible" variants={fadeInUp}
+          className="text-[16px] text-gray-400 mb-12 max-w-3xl leading-relaxed font-light"
+        >
+          OwlphaDAO is a Web3 ecosystem amplifying builders and projects with real utility. We connect communities, host events, and drive adoption through education and innovation.
+        </motion.p>
       </section>
 
-      {/* 2. Our Mission & Vision (Dark Mode Split) */}
-      <section className="relative w-full max-w-7xl mx-auto px-6 py-24 z-10 border-t border-white/10">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12"
-        >
-          {/* Mission Card */}
+      {/* 2. THE CORE PHILOSOPHY */}
+      <section className="relative py-24 px-6 bg-[#050505]/80 backdrop-blur-xl border-y border-[#1A1A1A] z-10">
+        <div className="max-w-7xl mx-auto">
           <motion.div 
-            variants={fadeUp}
-            className="relative p-10 lg:p-14 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-[var(--color-primary)]/30 transition-colors duration-500 overflow-hidden group backdrop-blur-md text-left"
+            variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+            className="grid lg:grid-cols-3 gap-8"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-primary)]/10 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-            <h2 className="text-3xl font-bold mb-6 text-white group-hover:text-[var(--color-primary)] transition-colors duration-300">Our Mission</h2>
-            <p className="text-gray-300 text-lg leading-relaxed font-light">
-              To connect communities, host impactful events, and drive widespread Web3 adoption through focused education, seamless collaboration, and relentless innovation.
-            </p>
+            {/* Philosophy Cards with Hover Lift & Glow */}
+            {[
+              { icon: Globe, title: "The Why", color: "text-[#E48C2A]", bg: "bg-[#E48C2A]/10", desc: "Talent is distributed evenly, but economic opportunity is trapped. We believe a borderless network of resilient people can bypass gatekeepers entirely by pooling skills, knowledge, and access." },
+              { icon: Target, title: "The Mission", color: "text-[#f74f4f]", bg: "bg-[#f74f4f]/10", desc: "To equip every Owlpha with the digital skills, market access, and community backing required to achieve financial sovereignty and actively pull another Owlpha up with them." },
+              { icon: Eye, title: "The Vision", color: "text-[#E48C2A]", bg: "bg-[#E48C2A]/10", desc: "A global, self-sustaining ecosystem where 'success' isn’t measured by token price, but by how many individuals move from economic survival to economic impact." }
+            ].map((item, idx) => (
+              <motion.div 
+                key={idx}
+                variants={fadeInUp}
+                whileHover={{ y: -10, transition: { duration: 0.2 } }}
+                className="group relative bg-gradient-to-b from-[#111] to-[#0A0A0A] p-10 rounded-3xl border border-[#222] hover:border-[#E48C2A]/50 transition-colors duration-300"
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-[#E48C2A]/0 to-[#E48C2A]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
+                <div className={`w-14 h-14 ${item.bg} rounded-xl flex items-center justify-center mb-8 border border-white/5 group-hover:scale-110 transition-transform duration-300`}>
+                  <item.icon className={item.color} size={28} />
+                </div>
+                <h3 className="text-2xl font-['Space_mono',monospace] font-bold mb-4 text-white group-hover:text-[#E48C2A] transition-colors">{item.title}</h3>
+                <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
           </motion.div>
-
-          {/* Vision Card */}
-          <motion.div 
-            variants={fadeUp}
-            className="relative p-10 lg:p-14 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-blue-500/30 transition-colors duration-500 overflow-hidden group backdrop-blur-md text-left"
-          >
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
-            <h2 className="text-3xl font-bold mb-6 text-white group-hover:text-blue-500 transition-colors duration-300">Our Vision</h2>
-            <p className="text-gray-300 text-lg leading-relaxed font-light">
-              To build a thriving Web3 ecosystem that amplifies builders and projects, ensuring that real utility scales across all blockchains to create lasting, real-world value.
-            </p>
-          </motion.div>
-        </motion.div>
+        </div>
       </section>
 
-      {/* 3. Core Values (Dark Grid) - Set alignment to left */}
-      <section className="relative w-full max-w-7xl mx-auto px-6 py-24 z-10 border-t border-white/10">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="mb-16 text-left"
-        >
-          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">
-            Our Core <span className="text-[var(--color-primary)]">Pillars</span>
-          </motion.h2>
-          <motion.p variants={fadeUp} className="text-gray-400 text-lg max-w-2xl font-light">
-            The foundational principles driving our ecosystem, events, and commitment to Web3 adoption.
-          </motion.p>
-        </motion.div>
+      {/* 3. DECODING THE NAME */}
+      <section className="relative py-32 px-6 max-w-7xl mx-auto z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-5xl font-['Space_mono',monospace] font-black mb-6 tracking-tight">
+            Anatomy of <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E48C2A] to-[#f74f4f]">Our Brand</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-[16px]">
+            Our identity is deeply rooted in nature, leadership, and decentralized collaboration.
+          </p>
+        </div>
 
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-        >
-          {coreValues.map((value, index) => (
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
+          {[
+            { icon: Feather, title: "OWL", color: "text-[#E48C2A]", desc: "The Owl represents vision in the dark and silent execution. In the volatile world of Web3, the Owl sees through the noise. It symbolizes the wisdom to learn and the precision to strike." },
+            { icon: Shield, title: "PHA", color: "text-[#f74f4f]", desc: "Derived from 'Alpha', representing leadership and taking charge. We don't wait for opportunities; we create them. To be the 'Pha' is to be at the forefront of the future of work." },
+            { icon: Network, title: "DAO", color: "text-[#E48C2A]", desc: "Decentralized Autonomous Organization. We are a borderless collective. Ownership, governance, and value flow back to the community that builds it." }
+          ].map((item, idx) => (
             <motion.div 
-              key={index} 
-              variants={fadeUp} 
-              className="group relative flex flex-col p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:border-[var(--color-primary)]/30 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm text-left"
+              key={idx}
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} 
+              className="relative p-10 overflow-hidden rounded-3xl bg-[#0A0A0A] border border-[#222] group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 text-gray-400 group-hover:text-[var(--color-primary)] group-hover:bg-[var(--color-primary)]/10 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                {value.icon}
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-[var(--color-primary)] transition-colors duration-300">
-                {value.title}
-              </h3>
-              <p className="text-gray-300 leading-relaxed font-light">
-                {value.description}
+              {/* Animated glow orb behind the icon */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-current opacity-5 blur-[50px] group-hover:opacity-10 transition-opacity" style={{ color: item.color === 'text-[#f74f4f]' ? '#f74f4f' : '#E48C2A' }} />
+              
+              <motion.div variants={floatAnimation} initial="initial" animate="animate">
+                <item.icon size={40} className={`${item.color} mb-8 opacity-90`} />
+              </motion.div>
+              <h3 className="text-3xl font-['Space_mono',monospace] font-black text-white mb-4 tracking-widest">{item.title}</h3>
+              <p className="text-gray-400 text-sm md:text-base leading-relaxed relative z-10">
+                {item.desc}
               </p>
             </motion.div>
           ))}
+        </div>
+
+        {/* What is an Owlpha Highlight */}
+        <motion.div 
+          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} 
+          className="bg-gradient-to-br  from-[#E48C2A] to-[#c97a23] text-[#000] rounded-[2.5rem] p-10 md:p-16 text-center max-w-5xl mx-auto relative overflow-hidden shadow-[0_0_50px_rgba(228,140,42,0.2)] hover:shadow-[0_0_80px_rgba(228,140,42,0.3)] transition-shadow duration-500"
+        >
+          <motion.div 
+            animate={{ rotate: [0, 5, 0], scale: [1, 1.05, 1] }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 right-0 opacity-10 transform translate-x-1/4 -translate-y-1/4 pointer-events-none"
+          >
+             <Feather size={350} strokeWidth={1} />
+          </motion.div>
+          
+          <h3 className="text-4xl font-['Space_mono',monospace] md:text-5xl font-black mb-8 relative z-10 tracking-tight">What is an "Owlpha"?</h3>
+          <p className="text-lg md:text-2xl font-medium leading-relaxed relative z-10 max-w-3xl mx-auto opacity-90">
+            An individual who stands with us. A learner turned executor. A builder who refuses to let geography dictate their economic reality. Above all, an Owlpha lives by a single code:
+          </p>
+          <div className="mt-10 inline-block bg-black/10 backdrop-blur-sm px-8 py-6 rounded-2xl border border-black/10 relative z-10">
+            <span className="font-black italic font-['Space_mono',monospace] text-2xl md:text-3xl tracking-tight">
+              "Acquire the skills. Execute the blueprint. Pull another Owlpha up."
+            </span>
+          </div>
         </motion.div>
       </section>
 
-      {/* 4. CTA Section (Dark Theme) - Set alignment to left */}
-      <section className="relative w-full max-w-5xl mx-auto px-6 py-32 text-center z-10">
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="relative p-12 lg:p-20 rounded-[3rem] bg-white/[0.03] border border-white/10 overflow-hidden backdrop-blur-md"
-        >
-          <div className="absolute inset-0 bg-[var(--color-primary)]/10 blur-3xl pointer-events-none" />
-          
-          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-bold mb-6 text-white relative z-10">
-            Ready to Drive Adoption?
+      {/* 4. THE ECOSYSTEM ARCHITECTURE */}
+      <section className="relative py-30 px-6 bg-[#050505] border-y border-[#1A1A1A] z-10 overflow-hidden">
+        {/* Background glow for the timeline */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[80%] max-w-md bg-[#f74f4f] opacity-[0.03] blur-[120px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center  mb-24">
+            <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-4xl font-['Space_mono',monospace] font-bold md:text-5xl font-black mb-6">
+              The Engine of Empowerment
+            </motion.h2>
+            <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-gray-400 text-lg">
+              How we transform raw potential into market impact.
+            </motion.p>
+          </div>
+
+          <div className="relative">
+            {/* Animated Connecting Vertical Line (Desktop) */}
+            <div className="hidden lg:block absolute left-[50%] top-0 bottom-0 w-px bg-[#222] -translate-x-1/2">
+              <motion.div 
+                initial={{ height: "0%" }}
+                whileInView={{ height: "100%" }}
+                viewport={{ once: true, margin: "-20%" }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+                className="w-full bg-gradient-to-b from-[#E48C2A] via-[#f74f4f] to-[#E48C2A] shadow-[0_0_15px_rgba(228,140,42,0.5)]"
+              />
+            </div>
+
+            {/* Steps Data */}
+            {[
+              {
+                title: "Future of Work Academy",
+                subtitle: "The Foundation",
+                color: "#E48C2A",
+                icon: BookOpen,
+                align: "left",
+                desc: "The open courtyard of the ecosystem where verified educators teach high-income digital skills. It eliminates the noise of unverified online learning. Anyone in any region can enter to upgrade their raw capacity.",
+                points: ["Verified Educators", "High-Income Skill Acquisition", "Borderless Access"]
+              },
+              {
+                title: "Career Activation Platform",
+                subtitle: "The Catalyst",
+                color: "#f74f4f",
+                icon: Zap,
+                align: "right",
+                desc: "A high-intensity, 7-day sprint that takes a member from passive learner to active execution. They don't just finish a course; they walk out with an Execution Blueprint for their career or self-development.",
+                points: ["Passive to Active Execution", "7-Day High-Intensity Sprint", "Delivery of Execution Blueprint™"]
+              },
+              {
+                title: "Talent Support Unit (TSU)",
+                subtitle: "The Destination & Engine",
+                color: "#E48C2A",
+                icon: Users,
+                align: "left",
+                desc: "The central node where economic impact actually changes lives. It houses the Talent Network, Events/Gigs, Feedback, and Support. This is where our ecosystem archetypes interact to create mutual wealth.",
+                customPoints: (
+                  <div className="space-y-6">
+                    <div>
+                      <h5 className="font-bold text-white mb-1 flex items-center gap-2"><ChevronRight size={16} className="text-[#E48C2A]" /> The Rainmakers</h5>
+                      <p className="text-sm text-gray-400 pl-6">Post gigs and safely subcontract work to verified Academy/CAP talent.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-white mb-1 flex items-center gap-2"><ChevronRight size={16} className="text-[#E48C2A]" /> The Multipliers</h5>
+                      <p className="text-sm text-gray-400 pl-6">Review blueprints and mentor newer members emerging from sprints.</p>
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-white mb-1 flex items-center gap-2"><ChevronRight size={16} className="text-[#E48C2A]" /> The Operators</h5>
+                      <p className="text-sm text-gray-400 pl-6">Coordinate regional physical meetups to keep localized energy alive.</p>
+                    </div>
+                  </div>
+                )
+              }
+            ].map((step, idx) => (
+              <motion.div 
+                key={idx}
+                initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp} 
+                className={`grid lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-24 relative ${step.align === 'right' ? 'lg:flex-row-reverse' : ''}`}
+              >
+                {/* Text Block */}
+                <div className={`${step.align === 'left' ? 'lg:pr-8 lg:text-right' : 'order-1 lg:order-2 lg:pl-8'}`}>
+                  <h3 className="text-3xl font-['Space_mono',monospace] font-bold  md:text-4xl font-black mb-3 text-white">{step.title}</h3>
+                  <h4 style={{ color: step.color }} className="font-bold mb-6 uppercase tracking-widest text-sm bg-black/50 inline-block px-3 py-1 rounded-full border border-white/5 backdrop-blur-md">
+                    {step.subtitle}
+                  </h4>
+                  <p className="text-gray-400 leading-relaxed text-lg">
+                    {step.desc}
+                  </p>
+                </div>
+
+                {/* Central Floating Icon */}
+                <div className="hidden lg:flex absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#0A0A0A] border-4 rounded-full items-center justify-center z-10 shadow-2xl" style={{ borderColor: step.color, boxShadow: `0 0 30px ${step.color}40` }}>
+                  <motion.div variants={pulseGlow} initial="initial" animate="animate">
+                    <step.icon size={24} style={{ color: step.color }} />
+                  </motion.div>
+                </div>
+
+                {/* Info Card */}
+                <div className={`${step.align === 'left' ? 'lg:pl-8' : 'order-2 lg:order-1 lg:pr-8'}`}>
+                  <div className="bg-gradient-to-br from-[#111] to-[#0A0A0A] p-8 md:p-10 rounded-3xl border border-[#222] hover:border-[#444] transition-colors relative overflow-hidden group">
+                    {/* Subtle internal glow on hover */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br" style={{ backgroundImage: `linear-gradient(to bottom right, transparent, ${step.color})` }} />
+                    
+                    {step.customPoints ? step.customPoints : (
+                      <ul className="space-y-5 text-base text-gray-300 relative z-10">
+                        {step.points.map((pt, i) => (
+                          <li key={i} className="flex items-center gap-4">
+                            <div className="w-8 h-8 rounded-full bg-black/50 flex items-center justify-center border border-white/5 shrink-0">
+                              <CheckCircle color={step.color} />
+                            </div>
+                            <span className="font-medium">{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. CTA SECTION */}
+      <section className="relative py-10 px-6 text-center z-10 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[300px] bg-[#E48C2A] opacity-5 blur-[100px] pointer-events-none rounded-full" />
+        
+        <div className="max-w-3xl mx-auto relative z-10">
+          <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-5xl font-['Space_mono',monospace] font-bold md:text-6xl font-black mb-8 tracking-tight">
+            Ready to join the <span className="text-transparent bg-clip-text   bg-gradient-to-r from-[#E48C2A] to-[#f74f4f]">movement?</span>
           </motion.h2>
-          <motion.p variants={fadeUp} className="text-xl item-center text-center text-gray-300 mb-10 max-w-2xl relative z-10 font-light">
-            Join our Web3 ecosystem to collaborate, innovate, and amplify projects with real utility.
+          <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-gray-400 mb-12 text-[16px] max-w-2xl mx-auto">
+            Whether you're here to learn, build, hire, or mentor—there is a place for you in the Owlpha ecosystem.
           </motion.p>
           
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-            <Link to="/community" className="bg-[var(--color-primary)] text-white px-8 py-4 rounded-full font-bold hover:bg-orange-600 transition-all duration-300 shadow-[0_0_20px_rgba(228,140,42,0.3)] hover:shadow-[0_0_30px_rgba(228,140,42,0.5)] hover:-translate-y-1 text-center">
-              Join the Ecosystem
-            </Link>
-            <Link to="/contact" className="bg-transparent text-white border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/5 hover:border-white/30 transition-all duration-300 hover:-translate-y-1 text-center">
-              Get in Touch
-            </Link>
-          </motion.div>
-        </motion.div>
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="group px-10 py-5 bg-[#E48C2A] text-[#000] font-['Space_mono',monospace] font-bold  font-black rounded-2xl transition-all flex items-center justify-center gap-3 mx-auto text-lg shadow-[0_0_40px_rgba(228,140,42,0.4)] hover:shadow-[0_0_60px_rgba(228,140,42,0.6)]"
+          >
+            Become an Owlpha 
+            <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
+          </motion.button>
+        </div>
       </section>
 
     </div>
   );
-};
+}
 
-export default About;
+// Refined Helper Component for the list checks
+function CheckCircle({ color }) {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+    </svg>
+  );
+}
