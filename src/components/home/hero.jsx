@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -47,10 +47,9 @@ const staggerContainer = {
 
 export default function HeroSection() {
   return (
-    // Fixed overflow: Removed max-w-full and added strict overflow-x-hidden
+    
     <section className="relative w-full min-h-screen  bg-[#0a0501] flex items-center">
-      
-   
+    
 
       {/* TWO-COLUMN GRID */}
       <div className="grid grid-cols-1 lg:grid-cols-2 w-full h-full -mt-15 min-h-screen relative z-10">

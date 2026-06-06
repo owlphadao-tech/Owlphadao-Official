@@ -99,7 +99,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
           >
             <button className="w-full bg-white text-black px-5 py-3 rounded-md text-sm font-semibold hover:bg-[#E48C2A] hover:text-white">
-              Connect Web3
+              Connect
             </button>
           </Link>
         </div>
