@@ -1,10 +1,13 @@
+
+import HeroSection from '../components/Sections/hero';
+import TrustBanner from '../components/Sections/TrustBanner';
+import AboutPage from '../components/Sections/About';
+import NftCollectionSection from '../components/Sections/NftCollectionSection';
+import Contact from '../components/Sections/Contact';
+import Story from '../components/Sections/story';
 import Footer from '../components/Footer';
-import HeroSection from '../components/home/hero';
-import TrustBanner from '../components/home/TrustBanner';
-import SolutionSection from '../components/home/Solutionsection';
-import AboutPage from '../components/home/About';
-import NftCollectionSection from '../components/home/NftCollectionSection';
-import Contact from '../components/home/Contact';
+
+
 
 const Home = () => {
   return (
@@ -13,7 +16,7 @@ const Home = () => {
       <TrustBanner/>
       <AboutPage/>
       <NftCollectionSection/>
-      <SolutionSection/>
+       <Story/>
       <Contact/>
       <Footer/>
     </div>
