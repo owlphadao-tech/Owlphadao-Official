@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
@@ -33,7 +34,6 @@ export default function NftCollectionSection() {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* CHANGED: flex-col to flex-row for desktop, kept flex-col for mobile */}
         <div className="flex flex-col lg:flex-row items-center gap-12">
           
           {/* Left Column: Text */}
@@ -50,13 +50,16 @@ export default function NftCollectionSection() {
               <p>Like diverse traits in the collection, individuals contribute uniquely, forming a vital part of the community.</p>
             </div>
             
-            <motion.button 
+            <motion.a 
+              href="https://magiceden.io/marketplace/the_owl_man" target='_blank'
               whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-              className="mt-10 px-8 py-4 font-['Space_mono',monospace] font-bold bg-[#E48C2A] text-white rounded-full transition-colors duration-300 shadow-[0_10px_25px_rgba(228,140,42,0.4)]"
+              className="inline-block text-center mt-10 px-8 py-4 font-['Space_mono',monospace] font-bold bg-[#E48C2A] text-white rounded-full transition-colors duration-300 shadow-[0_10px_25px_rgba(228,140,42,0.4)]"
             >
               View Full Collection
-            </motion.button>
+            </motion.a>
           </motion.div>
+
+          
 
           {/* Right Column: Cards */}
           <div className="relative h-[400px] w-full lg:w-1/2 flex items-center justify-center perspective-[1200px]">

@@ -82,9 +82,9 @@ export default function HeroSection() {
               variants={fadeInUp} 
               className="flex  gap-4 mb-7"
             >
-              <button className="px-4 py-2 bg-[#E48C2A] font-['Space_mono',monospace]  text-[#0a0501] font-bold rounded-xl transition-all hover:shadow-[0_0_35px_rgba(228,140,42,0.4)] flex items-center justify-center gap-2">
+              <a href='https://tsu.owlphadao.com' target='_blank' className="px-4 py-2 bg-[#E48C2A] font-['Space_mono',monospace]  text-[#0a0501] font-bold rounded-xl transition-all hover:shadow-[0_0_35px_rgba(228,140,42,0.4)] flex items-center justify-center gap-2">
                 Join The Ecosystem <ArrowRight size={20} />
-              </button>
+              </a>
               
              
             </motion.div>

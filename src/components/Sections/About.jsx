@@ -39,7 +39,7 @@ const pulseGlow = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#000000] text-[#FFFFFF] font-sans min-h-screen overflow-hidden selection:bg-[#E48C2A] selection:text-[#000000] relative">
+    <div id='about' className="bg-[#000000] text-[#FFFFFF] font-sans min-h-screen overflow-hidden selection:bg-[#E48C2A] selection:text-[#000000] relative">
       
       {/* Background Grid Pattern with Bottom Fade Mask */}
       <div 
@@ -164,7 +164,7 @@ export default function AboutPage() {
              <Feather size={350} strokeWidth={1} />
           </motion.div>
           
-          <h3 className="text-4xl font-['Space_mono',monospace] md:text-5xl font-black mb-8 relative z-10 tracking-tight">What is an "Owlpha"?</h3>
+          <h3 className="text-4xl font-['Space_mono',monospace] md:text-5xl font-black mb-8 relative z-10 tracking-tight">Who is an "Owlpha"?</h3>
           <p className="text-lg md:text-2xl font-medium leading-relaxed relative z-10 max-w-3xl mx-auto opacity-90">
             An individual who stands with us. A learner turned executor. A builder who refuses to let geography dictate their economic reality. Above all, an Owlpha lives by a single code:
           </p>
@@ -177,7 +177,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. THE ECOSYSTEM ARCHITECTURE (Enhanced with Story Imagery) */}
-      <section className="relative py-30 px-6 bg-[#050505] border-t border-[#1A1A1A] z-10 overflow-hidden">
+      <section id='ecosystem' className="relative py-30 px-6 bg-[#050505] border-t border-[#1A1A1A] z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[80%] max-w-md bg-[#f74f4f] opacity-[0.03] blur-[120px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto relative z-10">
@@ -319,7 +319,7 @@ export default function AboutPage() {
             Ready to join the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E48C2A] to-[#f74f4f]">movement?</span>
           </motion.h2>
           <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-gray-400 mb-12 text-[16px] max-w-2xl mx-auto">
-            Whether you're here to learn, build, hire, or mentor—there is a place for you in the Owlpha ecosystem.
+            Whether you're here to learn, build, hire, or mentor, there is a place for you in the Owlpha ecosystem.
           </motion.p>
           
           <motion.button 
@@ -335,7 +335,6 @@ export default function AboutPage() {
 
       {/* Global Bottom Fade Overlay */}
       <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-black to-transparent pointer-events-none z-50" />
-
     </div>
   );
 }
