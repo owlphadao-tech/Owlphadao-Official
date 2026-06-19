@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ScrollToTop from './components/ScrollToTop';
-import Navbar from './components/NavBar';
-import Home from './pages/HomePage';
+import ScrollToTop from '../components/ScrollToTop';
+import Navbar from '../components/NavBar';
+import Home from '../pages/HomePage';
 
 
 function App() {
