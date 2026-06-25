@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ScrollToTop from '../components/ScrollToTop';
-import Navbar from '../components/NavBar';
-import Home from '../pages/HomePage';
+
+
+import Navbar from './components/NavBar';
+
+import HomePage from './pages/HomePage';
 
 
 function App() {
@@ -26,13 +28,13 @@ function App() {
   return (
     <Router>
      
-      <ScrollToTop />
+     
       
       <div className="bg-[var(--color-light)] text-[var(--color-dark)] min-h-screen font-sans selection:bg-[var(--color-primary)] selection:text-[var(--color-light)] flex flex-col">
-        <Navbar />
+        <Navbar/>
         <main className="flex-grow">
           <Routes>
-            <Route path="/" element={<Home /> } />
+            <Route path="/" element={ <HomePage/> } />
            
           </Routes>
         </main>

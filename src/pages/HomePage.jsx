@@ -19,7 +19,7 @@ import FAQSection from '../components/Sections/FAQ';
 
 
 
-const Home = () => {
+const HomePage = () => {
   return (
     <div className="bg-[var(--color-dark)] min-h-screen">
       <HeroSection/>
@@ -43,4 +43,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
