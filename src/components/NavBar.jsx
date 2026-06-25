@@ -20,7 +20,7 @@ const Navbar = () => {
           duration={500} 
           className="text-2xl flex font-bold tracking-tighter text-white cursor-pointer select-none"
         >
-          <img src="/owlpha-logo.png" width={60} alt="Owlpha Logo" />
+          <img src="/owlpha-logo.png" width={50} alt="Owlpha Logo" />
         </Link>
 
         {/* Desktop Navigation */}

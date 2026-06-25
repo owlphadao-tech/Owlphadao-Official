@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Eye, Shield, Users, ArrowRight, BookOpen, 
+  Eye, Shield, Users,  BookOpen, 
   Zap, Network, Target, Feather, Globe, 
   ChevronRight
 } from 'lucide-react';
@@ -307,29 +307,6 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* 5. CTA SECTION */}
-      <section className="relative pt-10 pb-32 px-6 text-center z-10 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[300px] bg-[#E48C2A] opacity-5 blur-[100px] pointer-events-none rounded-full" />
-        
-        <div className="max-w-3xl mx-auto relative z-10">
-          <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-5xl font-['Space_mono',monospace] font-bold md:text-6xl font-black mb-8 tracking-tight">
-            Ready to join the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E48C2A] to-[#f74f4f]">movement?</span>
-          </motion.h2>
-          <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-gray-400 mb-12 text-[16px] max-w-2xl mx-auto">
-            Whether you're here to learn, build, hire, or mentor, there is a place for you in the Owlpha ecosystem.
-          </motion.p>
-          
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group px-10 py-5 bg-[#E48C2A] text-[#000] font-['Space_mono',monospace] font-bold font-black rounded-2xl transition-all flex items-center justify-center gap-3 mx-auto text-lg shadow-[0_0_40px_rgba(228,140,42,0.4)] hover:shadow-[0_0_60px_rgba(228,140,42,0.6)]"
-          >
-            Become an Owlpha 
-            <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
-          </motion.button>
         </div>
       </section>
 

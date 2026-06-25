@@ -90,31 +90,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* STATS SECTION WITH COUNT UP */}
-            <motion.div 
-              variants={fadeInUp}
-              className="flex items-center font-['Space_mono',monospace]  gap-8 pt-3  border-white/10"
-            >
-              <div>
-                <h4 className="text-3xl  font-bold text-white mb-1 font-['Space_Grotesk',sans-serif]">
-                  <CountUp end={225} duration={2} />
-                </h4>
-                <p className="text-[16px] sm:text-sm text-[#E48C2A] font-medium tracking-wider uppercase">
-                  Owlman Collection NFTs
-                </p>
-              </div>
-              
-              {/* Vertical Divider */}
-              <div className="w-[1px] h-12 bg-white/10"></div>
-              
-              <div>
-                <h4 className="text-3xl font-bold text-white mb-1 font-['Space_Grotesk',sans-serif]">
-                  <CountUp end={948916} duration={2.5} useSeparator={true} />
-                </h4>
-                <p className="text-[16px] sm:text-sm text-[#E48C2A] font-medium tracking-wider uppercase">
-                  Total $ADC Supply
-                </p>
-              </div>
-            </motion.div>
+           
 
           </motion.div>
         </div>
