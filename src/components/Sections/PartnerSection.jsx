@@ -79,13 +79,13 @@ export default function PartnerSection() {
 
                 {/* Call to Action Button */}
                 <div className="pt-4">
-                  <button 
+                  <a href="https://tsu.owlphadao.com/join-network" target="_blank" rel="noopener noreferrer"
                     onClick={handleScrollToHub}
                     className="group relative inline-flex items-center gap-4 px-8 py-5 bg-[#FFFFFF] text-[#000000] font-bold text-sm tracking-wider uppercase rounded-xl overflow-hidden transition-all duration-300 hover:bg-[#E48C2A] hover:text-[#FFFFFF] active:scale-[0.98] shadow-xl hover:shadow-[0_0_30px_rgba(228,140,42,0.3)]"
                   >
                     <span className="font-['Space_mono',monospace]">Submit an Inquiry</span>
                     <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

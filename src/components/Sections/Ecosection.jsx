@@ -85,7 +85,7 @@ export default function EcosystemSection() {
                 
                 {/* Subtle graphic layout indicator inside the photo */}
                 <div className="absolute bottom-6 right-6 z-20 font-['Space_mono',monospace] text-[10px] tracking-[0.3em] uppercase opacity-30 text-white">
-                  [ System.Architecture_v1.0 ]
+                  Owlpha Ecosystem
                 </div>
               </div>
 
